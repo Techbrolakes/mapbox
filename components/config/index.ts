@@ -24,15 +24,15 @@ export const CITIES = [
         id: 4,
     },
     {
-        name: 'sydney',
-        lat: 33.8688,
-        lon: 151.2093,
+        name: 'lagos',
+        lat: 6.5244,
+        lon: 3.3792,
         id: 5,
     },
     {
-        name: 'moscow',
-        lat: 55.7558,
-        lon: 37.6173,
+        name: 'cairo',
+        lat: 30.0444,
+        lon: 31.2357,
         id: 6,
     },
     {
@@ -114,9 +114,9 @@ export const CITIES = [
         id: 19,
     },
     {
-        name: 'hanoi',
-        lat: 21.0278,
-        lon: 105.8342,
+        name: 'Abuja',
+        lat: 9.0765,
+        lon: 7.3986,
         id: 20,
     },
 ];

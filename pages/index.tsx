@@ -1,12 +1,16 @@
 import React from 'react';
 import { NextPage } from 'next';
 import PageHead from '@/components/pagehead';
+import MainLayout from '@/components/layouts';
+import Map from '@/components/map';
 
 const Home: NextPage = () => {
     return (
         <>
-            <PageHead title="Home" />
-            <h1>Home Page</h1>
+            <MainLayout>
+                <PageHead title="Home" />
+                <Map />
+            </MainLayout>
         </>
     );
 };

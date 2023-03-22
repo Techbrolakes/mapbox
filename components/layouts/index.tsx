@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from 'antd';
 import Logo from '../logo';
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 interface IProps {
     children: React.ReactNode;

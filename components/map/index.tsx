@@ -2,10 +2,9 @@ import React from 'react';
 import Mapbox, { Marker, Popup } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { CITIES } from '../config';
 
 const Map: React.FC = () => {
-    const [showPopup, setShowPopup] = React.useState(false);
-
     return (
         <div>
             <Mapbox
@@ -19,23 +18,13 @@ const Map: React.FC = () => {
                 mapStyle="mapbox://styles/mapbox/streets-v11"
                 mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_URL}
             >
-                <Marker longitude={-100} latitude={40} anchor="bottom">
-                    <span className="text-red-600 text-4xl shadow-md cursor-pointer" onClick={() => setShowPopup(true)}>
-                        <FaMapMarkerAlt />
-                    </span>
-                </Marker>
-
-                {showPopup && (
-                    <Popup longitude={-100} latitude={40} anchor="bottom" onClose={() => setShowPopup(false)}>
-                        You are here
-                    </Popup>
-                )}
-
-                <Marker longitude={-200} latitude={40} anchor="bottom">
-                    <span className="text-red-600 text-4xl shadow-md">
-                        <FaMapMarkerAlt />
-                    </span>
-                </Marker>
+                {CITIES.map(({ id, lat, lon, name }) => {
+                    <Marker key={id} longitude={Number(lon)} latitude={Number(lat)} anchor="bottom">
+                        <span className="text-red-600 text-4xl shadow-md">
+                            <FaMapMarkerAlt />
+                        </span>
+                    </Marker>;
+                })}
             </Mapbox>
         </div>
     );

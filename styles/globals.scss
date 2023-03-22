@@ -35,3 +35,40 @@
     font-weight: bold;
     font-style: normal;
 }
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track {
+    background-color: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#8dbdff, #77d4fc);
+    border-bottom: 2px;
+    border-bottom-left-radius: 0px;
+    height: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#8dbdff, #77d4fc);
+        border-bottom: 0;
+        border-bottom-left-radius: 0;
+        height: 0px !important;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+    background: none;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    height: 0;
+}

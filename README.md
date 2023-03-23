@@ -14,4 +14,30 @@
 ![screely-1679574765509](https://user-images.githubusercontent.com/45468437/227207407-f31a3d36-d3de-4316-8e15-e0476284d6fb.png)
 
 
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
 #### BUILT BY OLAMILEKAN DARAMOLA

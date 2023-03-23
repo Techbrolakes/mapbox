@@ -12,3 +12,6 @@
 
 # CURRENT WEATHER VIEW
 ![screely-1679574765509](https://user-images.githubusercontent.com/45468437/227207407-f31a3d36-d3de-4316-8e15-e0476284d6fb.png)
+
+
+# BUILT BY OLAMILEKAN DARAMOLA

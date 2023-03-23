@@ -5,6 +5,8 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { CITIES } from '../config';
 import axios from 'axios';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { Modal } from 'antd';
+import { AiFillCloseSquare } from 'react-icons/ai';
 
 type City = {
     id: number;
@@ -16,7 +18,7 @@ type City = {
 const Map: React.FC = () => {
     const [selectedCity, setSelectedCity] = useState<City | null>(null);
     const [weatherData, setWeatherData] = useState<any>();
-    const [popupOpen, setPopupOpen] = useState<{ [key: number]: boolean }>({});
+    const [open, setOpen] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchWeatherData = async () => {
@@ -29,14 +31,6 @@ const Map: React.FC = () => {
         };
         fetchWeatherData();
     }, [selectedCity]);
-
-    const handleMarkerClick = (cityId: number) => {
-        setPopupOpen({ ...popupOpen, [cityId]: true });
-    };
-
-    const handlePopupClose = () => {
-        setPopupOpen({});
-    };
 
     return (
         <Mapbox
@@ -55,23 +49,39 @@ const Map: React.FC = () => {
             <FullscreenControl position="top-right" />
             {CITIES.map(({ id, lat, lng, name }) => (
                 <div key={id}>
-                    <Marker longitude={lng} latitude={lat} anchor="bottom" onClick={() => handleMarkerClick(id)}>
+                    <Marker
+                        longitude={lng}
+                        latitude={lat}
+                        anchor="bottom"
+                        onClick={() => {
+                            setSelectedCity({ id, lat, lng, name });
+                            setOpen(true);
+                        }}
+                    >
                         <span className="text-red-600 cursor-pointer text-4xl shadow-md">
                             <FaMapMarkerAlt />
                         </span>
                     </Marker>
-                    {popupOpen[id] && (
-                        <Popup key={id} style={{ zIndex: 100 }} longitude={lng} latitude={lat} onClose={handlePopupClose} closeButton>
-                            <div>
-                                <h2>{name}</h2>
+                    {selectedCity && (
+                        <Modal
+                            closeIcon={<AiFillCloseSquare size={'32px'} />}
+                            footer={null}
+                            key={id}
+                            open={open}
+                            onCancel={() => setOpen(false)}
+                        >
+                            <div className="space-y-3 text-base text-dark capitalize">
+                                <h1 className="text-center underline underline-offset-8 ">{selectedCity?.name} Weather Details</h1>
+                                <h2>City : {selectedCity?.name}</h2>
                                 {weatherData && (
                                     <>
                                         <p>Temperature: {weatherData.main.temp}°C</p>
-                                        <p>Weather: {weatherData.weather[0].description}</p>
+                                        <p>Weather: {weatherData.weather[0].main}</p>
+                                        <p>Weather Description: {weatherData.weather[0].description}</p>
                                     </>
                                 )}
                             </div>
-                        </Popup>
+                        </Modal>
                     )}
                 </div>
             ))}

@@ -1,5 +1,8 @@
 ![logo-no-background](https://user-images.githubusercontent.com/45468437/227206691-fe388078-efce-41f9-acef-e1e71e229d70.png)
 
+### React Typescript Map Application that displays pins of some major cities and also gets the current weather detail in those cities
+
+
 # WELCOME SCREEN
 ![screely-1679574700184](https://user-images.githubusercontent.com/45468437/227206910-09378e7e-c313-463a-a855-4e1de6dd4ff7.png)
 

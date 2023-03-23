@@ -215,4 +215,28 @@ export const CITIES = [
         lng: 151.2093,
         id: 36,
     },
+    {
+        name: 'melbourne',
+        lat: -37.8136,
+        lng: 144.9631,
+        id: 37,
+    },
+    {
+        name: 'dubai',
+        lat: 25.2048,
+        lng: 55.2708,
+        id: 38,
+    },
+    {
+        name: 'doha',
+        lat: 25.2867,
+        lng: 51.5333,
+        id: 39,
+    },
+    {
+        name: 'Lisbon',
+        lat: 38.7223,
+        lng: -9.1393,
+        id: 40,
+    },
 ];

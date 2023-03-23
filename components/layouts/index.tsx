@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import Logo from '../logo';
 import Controls from '../controls';
 import { MapProvider } from 'react-map-gl';
+import Loader from '../loader';
 
 const { Sider, Content } = Layout;
 
@@ -11,6 +12,15 @@ interface IProps {
 }
 
 const MainLayout: React.FC<IProps> = ({ children }) => {
+    const [loading, setLoading] = React.useState(false);
+    React.useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 5000);
+    }, [loading]);
+
+    if (loading) return <Loader />;
     return (
         <MapProvider>
             <Layout className="font-primary antialiased min-w-full min-h-screen ">

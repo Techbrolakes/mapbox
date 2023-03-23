@@ -19,7 +19,7 @@
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Techbrolakes/mapbox.git
 ```
 
 Go to the project directory
@@ -37,7 +37,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run start
+  npm run dev
 ```
 
 #### BUILT BY OLAMILEKAN DARAMOLA

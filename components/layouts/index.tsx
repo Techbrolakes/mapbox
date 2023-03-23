@@ -45,7 +45,10 @@ const MainLayout: React.FC<IProps> = ({ children }) => {
                             <Controls />
                         </Sider>
                         <Content className=" relative overflow-y-auto">
-                            <div className="absolute top-0 z-50 left-0 bg-dark rounded-full p-4 lg:hidden" onClick={() => setVisible(true)}>
+                            <div
+                                className="absolute top-0 z-50 right-0 bg-dark rounded-full p-4 lg:hidden"
+                                onClick={() => setVisible(true)}
+                            >
                                 <FaBars className="text-2xl text-white" />
                             </div>
                             {children}
